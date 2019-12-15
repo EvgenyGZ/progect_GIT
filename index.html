@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>
+		GIT
+	</title>
+</head>
+<body>
+	<div class="container">
+		<div class="header text-center">
+			<h1>Электронный курс по GIT</h1>
+		</div>
+		<div class="container">
+			<div class="row ">
+				<div class="col-lg-2">
+					<h5>Страницы участников</h5>
+
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link active" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Главная страница</a>
+				      <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Евгений</a>
+				      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Надежда</a>
+				      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Станислав</a>
+      		   </div>
+				</div>
+				<!-- Часть со статьями -->
+				<div class="col">
+					<p ><h5 class="text-center">Материалы</h5></p>
+
+      				<div class="card" >
+					  <div class="card-body">
+					  	<!-- Шапка  -->
+					  	<div class="row">
+					  		<div class="card-header col-6 text-left">
+					  				<!-- Урок 1. -->
+					  		</div>
+					  		<div class="card-header col-6 text-right">
+					  				15-12-2019					  		
+					  		</div>
+					  	</div>
+					  				  
+					    <p class="card-title"><h4>Урок 1.</h4></p>
+					    <h6 class="card-subtitle mb-2 text-muted">Установка и запуск. На этой стадии мы подготавливаем место для работы и выбираем проект с которым начнем работать.</h6>
+					    
+					    <p class="card-text"><ol>
+					    	<li>Выбираем директорию, где будем работать с проектом.</li>
+					    	<li>Запускаем <b>GITBash</b>.</li>
+					    	<li>Используя команду <b>"<a href="">cd</a>"</b> c названием пути переходим в выбранную папку.</li>
+					    	<li>Для начала клонируем себе содержимое основной ветки master, так как на ней я буду писать инструкции<sup>1</sup>.</li>
+					    	<li><b>"Git <a href="">clone</a> https://github.com/EvgenyGZ/progect_GIT.git"</b></li>
+					    	<li>Именно этой командой с этим адресом мы клонируем в выбранное место именно этот проект<sup>2</sup>.</li>
+					    	<li>После того, как проект будет успешно скачан, можно переключаться непосредственно к работе с файлами в каталоге.</li>
+					    	<li>Мы закончили править код в файлах и теперь можно проверить, что GIT зафиксировал какие были изменения.</li>
+					    	<li>Командой <b>git <a href="">status</a></b> мы увидим список файлов в которых были изменения. Они будут выделены <b><span style="color: red">красным цветом</span></b>.</li>
+					    	<li>Следующий шаг, <b>git <a href="">add .</a></b><sup>4</sup> так мы даем понять, что все изменения нужно зафиксировать. </li>
+					    	<li>Убедиться в успешности предыдущего шага можно с помощью повторения команды <b>git <a href="">status</a></b></li>
+					    	<li>Если всё успешно, тогда список файлов станет <b><span style="color: green">зеленым</span></b>.</li>
+					    	<li>Теперь мы добавляем комментарий с помощью команды <b>git <a href="">commit -m</a></b><sup>5</sup> "Текст комментария"<sup>6</sup>.</li>
+					    	<li>Чтобы проверить успешность данной операции выполняем комманду <b>git <a href="">status</a></b>. Если всё верно - мы ничего не увидим.</li>
+					    	<li>В конце работы нужно отправить все изменения в сетевое хранилище. Для этого мы пишем <b>git <a href="">push origin master</a></b><sup>7</sup>. </li>
+					    	<li>Наблюдаем как файлы улетают на сервер.</li>
+					    	<li>На этом цикл работы считается законченным.</li>
+					    </ol>
+	</p>
+<hr>
+<p><sup>1</sup> - Поскольку работа подразумевается с уже созданным репозиторием, то процесс работы мы смотрим с позиции пользователя.<br>
+<sup>2</sup> - Адрес будет меняться в зависимости от проекта и автора.<br>
+<sup>3</sup> - Когда мы сами создаем свой репозиторий на локальной машине, пройдя 1-2-3 шаги мы выполняем команду git <a href="">init</a>, тем самым создавая рабочай каталог. и соответственно шаги 4-5-6 здесь не уместны.<br>
+<sup>4</sup> - Обязательно добавляем . (точку), давая понять, что надо отправить все изменения, что мы сделали.<br>
+<sup>5</sup> - -m обозначает, что комментарий мы пишем прямо из коммандной строки. Это намного проще, чем запускать текстовый редактор.<br>
+<sup>6</sup> - Текст обязательно стоит указать детально. Чтобы позже иметь представления о том какие именно изменения были там сделаны.<br>
+<sup>7</sup> - имена веток с которыми будет работать каждый отдельные человек мы будем проходить позже
+</p>
+ 						<!-- Футер  -->
+					  	<div class="row">
+					  		<div class="card-footer col text-center">
+					  				<h6 class="card-subtitle mb-2 text-muted">Используемые в работе команды</h6>
+					  				<a href="">init</a><sup>3</sup> 
+					  				<a href="">clone</a> 
+					  				<a href="">cd</a>
+					  				<a href="">status</a>
+					  				<a href="">add</a>
+					  				<a href="">commit</a>
+					  				<a href="">push</a>
+					  		</div>
+					  	</div>
+	
+<!-- 
+					    <a href="#" class="card-link">Card link</a>
+					    <a href="#" class="card-link">Another link</a> -->
+					  </div>
+					</div>
+    			</div>
+				
+			</div>
+		</div>
+		<div class="footer text-alight">
+			<p ><h5 class="text-center">2019</h5></p>
+		</div>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
